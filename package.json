@@ -1,7 +1,7 @@
 {
-  "name": "TechShopClient",
+  "name": "TechShopWallet",
   "version": "1.5.1",
-  "productName": "TechShopClient",
+  "productName": "TechShopWallet",
   "description": "TechShop Desktop Wallet",
   "main": "main.js",
   "scripts": {
@@ -24,11 +24,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArkEcosystem/ark-desktop.git"
+    "url": "git+https://github.com/ARK-Labs/make-desktop.git"
   },
   "keywords": [
     "Ark",
-    "Client",
+    "Wallet",
     "Electron"
   ],
   "author": {
@@ -55,9 +55,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ArkEcosystem/ark-desktop/issues"
+    "url": "https://github.com/ARK-Labs/make-desktop/issues"
   },
-  "homepage": "https://github.com/ArkEcosystem/ark-desktop#readme",
+  "homepage": "https://github.com/ARK-Labs/make-desktop#readme",
   "dependencies": {
     "about-window": "~1.8.0",
     "async": "^2.5.0",

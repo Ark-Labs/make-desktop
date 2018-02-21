@@ -12,7 +12,7 @@
     const _path = require('path')
     const ark = require(_path.resolve(__dirname, '../node_modules/makejs'))
     const mainNetmakejsNetworkKey = 'tshop'
-    const devNetmakejsNetworkKey = 'testnet'
+    const devNetmakejsNetworkKey = 'ark'
 
     let network = switchNetwork(storageService.getContext())
 
@@ -97,8 +97,8 @@
       n = storageService.getGlobal('networks')
       if (!n) {
         n = {
-          mainnet: createNetworkFrommakejs(mainNetmakejsNetworkKey, 50, 187, 'url(assets/images/images/Ark.jpg)'),
-          devnet: createNetworkFrommakejs(devNetmakejsNetworkKey, 30, 1, '#222299')
+          mainnet: createNetworkFrommakejs(mainNetmakejsNetworkKey, 50, 187, '#222299'),
+          devnet: createNetworkFrommakejs(devNetmakejsNetworkKey, 0x17, 0xaa, 'url(assets/images/images/Ark.jpg)')
         }
         storageService.setGlobal('networks', n)
       }
@@ -120,7 +120,7 @@
         explorer: makejsNetwork.explorer,
         version: version,
         slip44: slip44,
-        forcepeer: false,
+        forcepeer: true,
         background: background,
         theme: 'default',
         themeDark: false

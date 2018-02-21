@@ -17,7 +17,7 @@
     let storage = {}
     let context = window.localStorage.getItem('context')
     if (!context) {
-      context = 'mainnet'
+      context = 'techshop'
       window.localStorage.setItem('context', context)
     } else {
       switchContext(context)

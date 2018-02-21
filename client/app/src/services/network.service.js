@@ -11,7 +11,7 @@
   function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {
     const _path = require('path')
     const ark = require(_path.resolve(__dirname, '../node_modules/makejs'))
-    const mainNetmakejsNetworkKey = 'tshop'
+    const mainNetmakejsNetworkKey = 'techshop'
     const devNetmakejsNetworkKey = 'ark'
 
     let network = switchNetwork(storageService.getContext())
@@ -97,8 +97,8 @@
       n = storageService.getGlobal('networks')
       if (!n) {
         n = {
-          mainnet: createNetworkFrommakejs(mainNetmakejsNetworkKey, 50, 187, '#222299'),
-          devnet: createNetworkFrommakejs(devNetmakejsNetworkKey, 0x17, 0xaa, 'url(assets/images/images/Ark.jpg)')
+          techshop: createNetworkFrommakejs(mainNetmakejsNetworkKey, 50, 187, '#222299'),
+          ark: createNetworkFrommakejs(devNetmakejsNetworkKey, 0x17, 0xaa, 'url(assets/images/images/Ark.jpg)')
         }
         storageService.setGlobal('networks', n)
       }

@@ -47,13 +47,13 @@
             <label translate>Explorer</label>
             <input ng-model="send.networks[networkName].explorer" type="text" ng-required="false">
           </md-input-container>
-          <md-input-container class="md-block" ng-hide="networkName === 'mainnet'">
+          <md-input-container class="md-block" ng-hide="networkName === 'techshop'">
             <label translate>Coin Market Cap Ticker</label>
             <input ng-model="send.networks[networkName].cmcTicker" type="text" ng-required="false">
           </md-input-container>
         </div>
         <md-dialog-actions layout="row" style="padding-left: 10px">
-          <md-button ng-if="!send.networks[networkName].isUnsaved" ng-click="send.removeNetwork(networkName)" class="md-raised md-warn" ng-disabled="networkName == 'mainnet'">
+          <md-button ng-if="!send.networks[networkName].isUnsaved" ng-click="send.removeNetwork(networkName)" class="md-raised md-warn" ng-disabled="networkName == 'techshop'">
             <translate>Remove</translate>
           </md-button>
           <span flex></span>

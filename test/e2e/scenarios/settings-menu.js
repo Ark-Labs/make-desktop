@@ -33,7 +33,7 @@ describe('Settings menu', function () {
       let wasEnabled
 
       before(function () {
-        return this.app.client.getLocalStorage('storage-mainnet')
+        return this.app.client.getLocalStorage('storage-techshop')
           .then(storage => {
             wasEnabled = storage.playFundsReceivedSound
             return this.app.client.clickPlaySound()
@@ -50,7 +50,7 @@ describe('Settings menu', function () {
       })
 
       it('stores the new state inmediatly', function () {
-        return this.app.client.getLocalStorage('storage-mainnet')
+        return this.app.client.getLocalStorage('storage-techshop')
           .then(storage => {
             if (wasEnabled) {
               return (storage).should.not.have.key('playFundsReceivedSound')

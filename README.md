@@ -22,11 +22,6 @@
 * (soon) Multisignature accounts.
 * **SAVE YOUR PASSPHRASE(S) - if you lose it, you lose access to that particular MAKE address(es). There is no forgot my password option with blockchains and no one can help you retrieve it!**
 
-
-## Screenshots
-![dashboard](https://i.imgur.com/AVdyM16.jpg)
-![account](https://i.imgur.com/DD8fx1O.jpg)
-
 ## Build
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. Optionally switch to node 6.9.2, because this is currently developed with this version:

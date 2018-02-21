@@ -359,7 +359,7 @@
 
     function getLatestClientVersion () {
       const deferred = $q.defer()
-      const url = 'https://api.github.com/repos/ArkEcosystem/ark-desktop/releases/latest'
+      const url = 'https://github.com/ARK-Labs/make-desktop/releases/latest'
       $http.get(url, { timeout: 5000 })
         .then((res) => {
           deferred.resolve(res.data.tag_name)

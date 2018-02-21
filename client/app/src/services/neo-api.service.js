@@ -5,7 +5,7 @@
     .service('neoApiService', ['$q', '$http', NeoApiService])
 
   function NeoApiService ($q, $http) {
-    const ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
+    const ark = require(require('path').resolve(__dirname, '../node_modules/makejs'))
     const baseUrl = 'https://neoscan.io/api/main_net/v1'
 
     /*

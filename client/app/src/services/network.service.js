@@ -10,9 +10,9 @@
    */
   function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {
     const _path = require('path')
-    const ark = require(_path.resolve(__dirname, '../node_modules/arkjs'))
-    const mainNetArkJsNetworkKey = 'tshop'
-    const devNetArkJsNetworkKey = 'testnet'
+    const ark = require(_path.resolve(__dirname, '../node_modules/makejs'))
+    const mainNetmakejsNetworkKey = 'tshop'
+    const devNetmakejsNetworkKey = 'testnet'
 
     let network = switchNetwork(storageService.getContext())
 
@@ -97,8 +97,8 @@
       n = storageService.getGlobal('networks')
       if (!n) {
         n = {
-          mainnet: createNetworkFromArkJs(mainNetArkJsNetworkKey, 50, 187, 'url(assets/images/images/Ark.jpg)'),
-          devnet: createNetworkFromArkJs(devNetArkJsNetworkKey, 30, 1, '#222299')
+          mainnet: createNetworkFrommakejs(mainNetmakejsNetworkKey, 50, 187, 'url(assets/images/images/Ark.jpg)'),
+          devnet: createNetworkFrommakejs(devNetmakejsNetworkKey, 30, 1, '#222299')
         }
         storageService.setGlobal('networks', n)
       }
@@ -108,16 +108,16 @@
       return n[newnetwork]
     }
 
-    function createNetworkFromArkJs (arkJsNetworkKey, version, slip44, background) {
-      const arkJsNetwork = ark.networks[arkJsNetworkKey]
+    function createNetworkFrommakejs (makejsNetworkKey, version, slip44, background) {
+      const makejsNetwork = ark.networks[makejsNetworkKey]
 
       return {
-        arkJsKey: arkJsNetworkKey,
-        nethash: arkJsNetwork.nethash,
-        peerseed: 'http://' + arkJsNetwork.activePeer.ip + ':' + arkJsNetwork.activePeer.port,
-        token: arkJsNetwork.token,
-        symbol: arkJsNetwork.symbol,
-        explorer: arkJsNetwork.explorer,
+        makejsKey: makejsNetworkKey,
+        nethash: makejsNetwork.nethash,
+        peerseed: 'http://' + makejsNetwork.activePeer.ip + ':' + makejsNetwork.activePeer.port,
+        token: makejsNetwork.token,
+        symbol: makejsNetwork.symbol,
+        explorer: makejsNetwork.explorer,
         version: version,
         slip44: slip44,
         forcepeer: false,
@@ -127,17 +127,17 @@
       }
     }
 
-    function tryGetPeersFromArkJs () {
-      if (!network.arkJsKey) {
+    function tryGetPeersFrommakejs () {
+      if (!network.makejsKey) {
         return
       }
 
-      const arkjsNetwork = ark.networks[network.arkJsKey]
-      if (!arkjsNetwork) {
+      const makejsNetwork = ark.networks[network.makejsKey]
+      if (!makejsNetwork) {
         return
       }
 
-      return arkjsNetwork.peers
+      return makejsNetwork.peers
     }
 
     function getNetwork () {
@@ -321,14 +321,14 @@
         // we don't have any peers, that means the app is probably started for the first time
         // (and therefore we do not have a peer list in our storage)
         // and getting a peer list failed (the peerseed server may be down)
-        // in this case we try to get a peer from the hardcoded list in the arkjs config
-        peers = tryGetPeersFromArkJs()
+        // in this case we try to get a peer from the hardcoded list in the makejs config
+        peers = tryGetPeersFrommakejs()
         isStaticPeerList = true
       } else if (index === 0) {
         peers = peers.sort((a, b) => b.height - a.height || a.delay - b.delay).filter(p => p.ip !== '127.0.0.1')
       }
 
-      // check again or we may have an exception in the case when we couldn't get the static peer list from arkjs
+      // check again or we may have an exception in the case when we couldn't get the static peer list from makejs
       if (!isPeerListValid()) {
         return
       }

@@ -11,7 +11,7 @@
   function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {
     const _path = require('path')
     const ark = require(_path.resolve(__dirname, '../node_modules/arkjs'))
-    const mainNetArkJsNetworkKey = 'ark'
+    const mainNetArkJsNetworkKey = 'tshop'
     const devNetArkJsNetworkKey = 'testnet'
 
     let network = switchNetwork(storageService.getContext())
@@ -97,7 +97,7 @@
       n = storageService.getGlobal('networks')
       if (!n) {
         n = {
-          mainnet: createNetworkFromArkJs(mainNetArkJsNetworkKey, 0x17, 111, 'url(assets/images/images/Ark.jpg)'),
+          mainnet: createNetworkFromArkJs(mainNetArkJsNetworkKey, 50, 187, 'url(assets/images/images/Ark.jpg)'),
           devnet: createNetworkFromArkJs(devNetArkJsNetworkKey, 30, 1, '#222299')
         }
         storageService.setGlobal('networks', n)

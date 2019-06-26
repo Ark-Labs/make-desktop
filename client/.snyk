@@ -1,0 +1,40 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - ark-qrcode > @stencil/core > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+        patched: '2019-06-26T18:41:18.968Z'
+  'npm:extend:20180424':
+    - node-vibrant > jimp > request > extend:
+        patched: '2019-06-26T18:41:18.968Z'
+    - ark-qrcode > @stencil/core > jsdom > request > extend:
+        patched: '2019-06-26T18:41:18.968Z'
+    - node-vibrant > @types/jimp > jimp > request > extend:
+        patched: '2019-06-26T18:41:18.968Z'
+    - ark-qrcode > @stencil/core > node-sass > request > extend:
+        patched: '2019-06-26T18:41:18.968Z'
+    - ark-qrcode > @stencil/core > node-sass > node-gyp > request > extend:
+        patched: '2019-06-26T18:41:18.968Z'
+    - ark-qrcode > @stencil/core > chokidar > fsevents > node-pre-gyp > request > extend:
+        patched: '2019-06-26T18:41:18.968Z'
+  'npm:stringstream:20180511':
+    - node-vibrant > jimp > request > stringstream:
+        patched: '2019-06-26T18:41:18.968Z'
+    - ark-qrcode > @stencil/core > jsdom > request > stringstream:
+        patched: '2019-06-26T18:41:18.968Z'
+    - node-vibrant > @types/jimp > jimp > request > stringstream:
+        patched: '2019-06-26T18:41:18.968Z'
+    - ark-qrcode > @stencil/core > node-sass > request > stringstream:
+        patched: '2019-06-26T18:41:18.968Z'
+    - ark-qrcode > @stencil/core > node-sass > node-gyp > request > stringstream:
+        patched: '2019-06-26T18:41:18.968Z'
+    - ark-qrcode > @stencil/core > chokidar > fsevents > node-pre-gyp > request > stringstream:
+        patched: '2019-06-26T18:41:18.968Z'
+  'npm:tough-cookie:20170905':
+    - ark-qrcode > @stencil/core > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2019-06-26T18:41:18.968Z'
+  'npm:tunnel-agent:20170305':
+    - ark-qrcode > @stencil/core > node-sass > request > tunnel-agent:
+        patched: '2019-06-26T18:41:18.968Z'
